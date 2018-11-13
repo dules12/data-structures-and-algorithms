@@ -47,7 +47,7 @@ Return the modified array.
 
 const removeOne = (num, arr) => {
   if(num % 3 === 2) {
-    arr.pop();  
+    arr.pop();
   }
   return arr;
 }
@@ -65,9 +65,12 @@ CHALLENGE 4
 Write a function named removeWithForEach that produces the same output as challenge 3, but uses forEach.
 ------------------------------------------------------------------------------------------------ */
 
-const removeWithForEach = (arr, callback) => {
-  // Solution code here...
-}
+// const removeWithForEach = (arr, callback) => {
+//   arr.forEach(callback(arr)) {
+//     return arr;
+//   }
+  
+// }
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
