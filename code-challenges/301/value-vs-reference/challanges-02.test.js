@@ -7,19 +7,10 @@ Write a function that appends ' The end.' to a string, and returns the modified 
 ------------------------------------------------------------------------------------------------ */
 
 const appendTheEnd = (str) => {
-  str.push(' The end. ')
-  return str;
+  let a = ' The end.';
+  return str + a;
 }
 
-// describe('Testing challenge 1', () => {
-//   test('It should append without modifying the oiginal', () => {
-//     const a = 'This is my story.';
-//     const b = appendTheEnd(a);
-
-//     expect(a).toStrictEqual('This is my story.');
-//     expect(b).toStrictEqual('This is my story. The end.');
-//   });
-// });
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
 Write a function that accepts an array and copies the first element to the end of the array. The change should be reflected in the source array that was passed in to the function. That is, the function should modify the array 'in place'.
@@ -31,8 +22,9 @@ console.log(a) prints [1, 2, 3, 1]
 ------------------------------------------------------------------------------------------------ */
 
 const appendFirstToLast = (arr) => {
-  // Solution code here...
+  arr.push(arr[0]);
 }
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -46,9 +38,17 @@ console.log(a) prints { fullName: 'Octavia Estelle Butler', yearBorn: 1947 }
 ------------------------------------------------------------------------------------------------ */
 
 const addBirthYearProperty = (obj, year) => {
-  // Solution code here...
+  obj.yearBorn = year;
 }
 
+// describe('Testing challenge 3', () => {
+//   test('It should add a property to an object', () => {
+//     const a = { fullName: 'Octavia Butler' };
+//     addBirthYearProperty(a, 1947);
+
+//     expect(a.yearBorn).toStrictEqual(1947);
+//   });
+// });
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
 Write a function that accepts an array of people objects and adds a new property called isAuthor to each object in the list. Set the value of the new property to true.
