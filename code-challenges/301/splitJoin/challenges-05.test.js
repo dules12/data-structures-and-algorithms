@@ -11,9 +11,21 @@ For example, if the input is 'Welcome', the output will be:
 
 const howMuchPencil = (str) => {
   let result = [];
-  // Solution code here...
+  for(let i = 0; i <= str.length; i++) {
+    let sliced = str.slice(i);
+    result.push(sliced);
+  }
   return result;
 };
+
+describe('Testing challenge 1', () => {
+  test('It should return a list of shortening words', () => {
+    expect(howMuchPencil('Welcome')).toStrictEqual(['Welcome', 'elcome', 'lcome', 'come', 'ome', 'me', 'e', '']);
+    expect(howMuchPencil('Welcome').length).toStrictEqual(8);
+    expect(howMuchPencil('')).toStrictEqual(['']);
+    expect(howMuchPencil('abc')).toStrictEqual(['abc', 'bc', 'c', '']);
+  });
+});
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -22,10 +34,19 @@ For example, wordsToCharList('gregor') returns ['g','r','e','g','o','r'].
 ------------------------------------------------------------------------------------------------ */
 
 const wordsToCharList = (arr) => {
-  // Solution code here...
+  let newArr = arr.split('');
+  return newArr;
 };
 
 
+describe('Testing challenge 2', () => {
+  test('It should return an array of individual letters', () => {
+    expect(wordsToCharList('Gregor')).toStrictEqual(['G', 'r', 'e', 'g', 'o', 'r']);
+    expect(wordsToCharList('Gregor').length).toStrictEqual(6);
+    expect(wordsToCharList('hooray')).toStrictEqual(['h', 'o', 'o', 'r', 'a', 'y']);
+    expect(wordsToCharList('')).toStrictEqual([]);
+  });
+});
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
 You are making a grocery list for ingredients needed in the gruffalo crumble recipe, below. Rather than taking the entire recipe, you only want a list of the item names.
@@ -61,13 +82,23 @@ const gruffaloCrumble = {
     'Bake for 12-15 hours',
   ]
 }
-
-
 const listFoods = (recipe) => {
-  let result = [];
-  // Solution code here...
-  return result;
+  let ingredientList = [];
+  recipe.ingredients.forEach((ingredient) => {
+    ingredientList.push(ingredient.slice(ingredient.indexOf(' ', 3)+1));
+  })
+  return ingredientList;
+
 }
+
+
+// describe('Testing challenge 3', () => {
+//   test('It should return a list of foods', () => {
+//     expect(listFoods(gruffaloCrumble)).toStrictEqual(['Gruffalo', 'oats', 'brown sugar', 'flour', 'pure maple syrup', 'chopped nuts', 'baking soda', 'baking powder', 'cinnamon', 'melted butter', 'fresh water']);
+//     expect(listFoods(gruffaloCrumble).length).toStrictEqual(11);
+//   });
+// });
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -75,9 +106,14 @@ Write a function named splitFoods that uses split to produce the same output as 
 You may also use other string or array methods.
 ------------------------------------------------------------------------------------------------ */
 
+
 const splitFoods = (recipe) => {
   let result = [];
-  // Solution code here...
+  recipe.ingredients.forEach((ingredient) => {
+    result.push(ingredient.split(' ')
+      .splice(2)
+      .join(' '))
+  })
   return result;
 }
 
