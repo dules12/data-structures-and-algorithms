@@ -10,7 +10,8 @@ const courseInfo = { name: 'Code 301', duration: { dayTrack: '4 weeks', eveningT
   finalExam: true };
 
 const getCourseKeys = (obj) => {
-  // Solution code here...
+  let properties = Object.keys(obj);
+  return properties;
 }
 
 /* ------------------------------------------------------------------------------------------------
@@ -65,7 +66,7 @@ let characters = [
 ]
 
 const totalCharacters = (arr) => {
-  // Solution code here...
+ return arr.length;
 }
 
 /*------------------------------------------------------------------------------------------------
@@ -75,9 +76,11 @@ Write a function named getHouses that returns a new array containing the names o
 
 const getHouses = (arr) => {
   let houses = [];
-  // Solution code here...
+  for (let index in arr) {
+    houses.push(arr[index].house);
+  }
   return houses;
-}
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
