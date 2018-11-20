@@ -48,8 +48,12 @@ Write a function named citiesAtoJ that takes in an array of city names and uses 
 ------------------------------------------------------------------------------------------------ */
 
 const citiesAtoJ = (arr) => {
-  let regEx = (/[A-J]\w+/g);
-  return arr.match(regEx);
+ const cityPattern = /^[A-J]/;
+ const results = [];
+ arr.array.forEach(city => {
+   if(cityPattern.test(city)) results.push(city);
+ })
+  returns results;
 };
 
 describe('Testing challenge 3', () => {
@@ -74,7 +78,7 @@ Do not use the vertical bar (pipe) in your pattern.
 ------------------------------------------------------------------------------------------------ */
 
 const matchMonth = (input) => {
-  
+  const monthPattern = /^[Oo]ct(ober)?$/;
 };
 
 describe('Testing challenge 4', () => {
@@ -92,6 +96,7 @@ The expected output of "Hello, and have a wonderful day!" is ["and ", "have ", "
 ------------------------------------------------------------------------------------------------ */
 
 const noPunctuation = str => {
+  let spacePattern = /\
   
 };
 
