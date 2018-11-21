@@ -36,10 +36,9 @@ Write a function named mapTwoToThe that produces the same output as your forLoop
 ------------------------------------------------------------------------------------------------ */
 
 const mapTwoToThe = (arr) => {
-  let numbers = arr.map ( (value) => {
-    return Math.pow(2, value);
-  });
-  
+  let numbs = arr.map ( (value) =>
+    Math.pow(2, value));
+  return numbs;
 }
 
 /* ------------------------------------------------------------------------------------------------
@@ -50,7 +49,8 @@ For example: charCode(['h','i']) returns [104, 105].
 ------------------------------------------------------------------------------------------------ */
 
 const charCode = (arr) => {
-  // Solution code here...
+  return arr.map ( (value) =>
+    value.charCodeAt());
 };
 
 /* ------------------------------------------------------------------------------------------------
