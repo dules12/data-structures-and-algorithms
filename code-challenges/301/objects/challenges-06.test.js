@@ -2,7 +2,7 @@
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 1
-Write a function named getCourseKeys that takes in the courseInfo object and returns an array containing the keys for the courseInfo object. 
+Write a function named getCourseKeys that takes in the courseInfo object and returns an array containing the keys for the courseInfo object.
 For example: (['name', 'duration', 'topics', 'finalExam']).
 ------------------------------------------------------------------------------------------------ */
 const courseInfo = { name: 'Code 301', duration: { dayTrack: '4 weeks', eveningTrack: '8 weeks'},
@@ -66,7 +66,7 @@ let characters = [
 ]
 
 const totalCharacters = (arr) => {
- return arr.length;
+  return arr.length;
 }
 
 /*------------------------------------------------------------------------------------------------
@@ -86,14 +86,18 @@ const getHouses = (arr) => {
 CHALLENGE 4
 Write a function named hasChildrenValues that uses Object.values to determine if any given character in the data set has children.
 This function should take in an array of data and a character name and return a Boolean.
-For example: 
-hasChildrenValues(characters, 'Sansa') will return true 
+For example:
+hasChildrenValues(characters, 'Sansa') will return true
 hasChildrenValues(characters, 'Eddard') will return false
 ------------------------------------------------------------------------------------------------ */
 
 const hasChildrenValues = (arr, character) => {
-  // Solution code here...
-}
+  let hasChildren;
+  Object.values(arr).forEach(obj => {
+    if (obj.name === character) {
+      hasChildren = obj.children.length > 0 ? true : false;
+    }   });   return hasChildren;
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
