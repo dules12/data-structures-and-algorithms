@@ -7,8 +7,14 @@ For example, ['this is great :)', 'wow', 'whyyyyyy :(', ':)))))'] returns ['t', 
 ------------------------------------------------------------------------------------------------ */
 
 const firstLetters = (arr) => {
-  // Solution code here...
-};
+  let firstArr = [];
+  for(let i = 0; i < arr.length; i++) {
+    firstArr.push(arr[i].charAt(0));
+  }
+  return firstArr;
+}
+
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -17,7 +23,13 @@ For example, ['this is great :)', 'wow', 'whyyyyyy :(', ':)))))'] returns ['this
 ------------------------------------------------------------------------------------------------ */
 
 const findHappiness = (arr) => {
-  // Solution code here...
+  let finalArr = [];
+  for(let i = 0; i < arr.length; i++) {
+    if (arr[i].includes(':)')) {
+      finalArr.push(arr[i]);
+    }
+  }
+  return finalArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -26,9 +38,17 @@ Write a function named standardizePhoneNumbers that takes in an array of phone n
 For example, (123) 456-7890 returns 1234567890
 ------------------------------------------------------------------------------------------------ */
 
-const standardizePhoneNumbers = (arr) => {
-  // Solution code here...
-};
+// const standardizePhoneNumbers = (arr) => {
+//   let phoneArr = [];
+//   for(let a = 0; a < arr[0].length; a++) {
+//     for(let b = 0; b < arr.length; {
+//       if (isNaN(arr[b])) {
+//         phoneArr.push(arr[b]);
+//       }
+//     }
+//     return phoneArr;
+//     }
+//   }
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -37,7 +57,13 @@ For example, 'abcdefg' returns 'bdf'
 ------------------------------------------------------------------------------------------------ */
 
 const onlyOddChars = (str) => {
-  // Solution code here...
+  let oddArr = [];
+  for(let i = 0; i < str.length; i++) {
+    if(i % 2 !== 0) {
+      oddArr.push(str[i]);
+    }
+  }
+  return oddArr.join('');
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -46,8 +72,13 @@ Write a function named allHappy that takes in an array of strings and returns a 
 ------------------------------------------------------------------------------------------------ */
 
 const allHappy = (arr) => {
-  // Solution code here...
-};
+  for(let i = 0; i < arr.length; i++) {
+    if (!arr[i].includes(':)')) {
+      return false;
+    }
+  }
+  return true;
+}
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
